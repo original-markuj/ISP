@@ -34,14 +34,15 @@
 
 //Console.WriteLine(x);
 
-float x = 2;
+//float x = 2;
 
-Console.Write($"Enter exp for {x}: ");
+//Console.Write($"Enter exp for {x}: ");
 
-double exp = Convert.ToDouble(Console.ReadLine());
+//double exp = Convert.ToDouble(Console.ReadLine());
 
-double y = Math.Exp(x * exp);
+//double y = Math.Exp(x * exp);
 
-Console.WriteLine($"Your exp for {x} is: {y}");
+//Console.WriteLine($"Your exp for {x} is: {y}");
 
-Console.WriteLine($"Do not go home until you finish reading the value of e. {Math.E:f50}");
+//Console.WriteLine($"Do not go home until you finish reading the value of e. {Math.E:f50}");
+
