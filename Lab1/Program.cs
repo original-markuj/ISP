@@ -22,7 +22,7 @@
 //Console.WriteLine($"A = {A:f5}");
 
 
-//Вариант 8
+//Вариант 8 Высокий
 
 Console.Write("Enter x: ");
 double x = Convert.ToDouble(Console.ReadLine());
