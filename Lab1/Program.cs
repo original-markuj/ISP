@@ -36,4 +36,3 @@ double c = Convert.ToDouble(Console.ReadLine());
 double P = (Math.Pow(a, 5) + Math.Pow(Math.Sin(y - c), 4)) / (Math.Pow(Math.Sin(x + y), 3) + Math.Abs(x - y));
 Console.WriteLine($"P = {P:f5}");
 
-//e
