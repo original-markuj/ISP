@@ -24,14 +24,21 @@
 
 //Вариант 8 Высокий
 
-Console.Write("Enter x: ");
-double x = Convert.ToDouble(Console.ReadLine());
-Console.Write("Enter y: ");
-double y = Convert.ToDouble(Console.ReadLine());
-Console.Write("Enter a: ");
-double a = Convert.ToDouble(Console.ReadLine());
-Console.Write("Enter c: ");
-double c = Convert.ToDouble(Console.ReadLine());
+try
+{
+    Console.Write("Enter x: ");
+    double x = Convert.ToDouble(Console.ReadLine());
+    Console.Write("Enter y: ");
+    double y = Convert.ToDouble(Console.ReadLine());
+    Console.Write("Enter a: ");
+    double a = Convert.ToDouble(Console.ReadLine());
+    Console.Write("Enter c: ");
+    double c = Convert.ToDouble(Console.ReadLine());
 
-double P = (Math.Pow(a, 5) + Math.Pow(Math.Sin(y - c), 4)) / (Math.Pow(Math.Sin(x + y), 3) + Math.Abs(x - y));
-Console.WriteLine($"P = {P:f5}");
+    double P = (Math.Pow(a, 5) + Math.Pow(Math.Sin(y - c), 4)) / (Math.Pow(Math.Sin(x + y), 3) + Math.Abs(x - y));
+    Console.WriteLine($"P = {P:f5}");
+}
+catch(Exception ex) //added 18.09.26
+{
+    Console.WriteLine(ex.Message);
+}
