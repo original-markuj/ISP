@@ -1,6 +1,6 @@
 <Solution>
   <Project Path="C# first lesson (free)/C# first lesson (free).csproj" />
+  <Project Path="Lab1.2/Lab1.2.csproj" />
+  <Project Path="Lab1.3/Lab1.3.csproj" />
   <Project Path="Lab1/Lab1.csproj" />
-  <Project Path="Lab2/Lab1.2.csproj" Id="9a195b57-7965-4f55-869c-e434b450074b" />
-  <Project Path="Lab3/Lab1.3.csproj" Id="d40041d4-8db3-4ab5-9137-c5c26a46835a" />
 </Solution>
