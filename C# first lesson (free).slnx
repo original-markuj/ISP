@@ -3,4 +3,5 @@
   <Project Path="Lab1.2/Lab1.2.csproj" />
   <Project Path="Lab1.3/Lab1.3.csproj" />
   <Project Path="Lab1/Lab1.csproj" />
+  <Project Path="Lab2/Lab2.csproj" Id="905cfbb0-3537-4e67-8a76-68cf9f14b19f" />
 </Solution>

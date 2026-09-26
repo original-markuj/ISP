@@ -46,3 +46,30 @@
 
 //Console.WriteLine($"Do not go home until you finish reading the value of e. {Math.E:f50}");
 
+try
+{
+    Console.Write("Hey, it's me, it's Verity! ");
+    string x = Console.ReadLine();
+    if (x == "Ask me anything")
+    {
+        Console.WriteLine("I have a question.");
+        Console.Write("I know about a million things! ");
+        string y = Console.ReadLine();
+        if (y == "I'll do everything")
+        {       
+            Console.WriteLine("Alright!");
+        }
+        else
+        {
+            Console.WriteLine("Evil Verity is coming for you");
+        };
+    }
+    else
+    { 
+        Console.WriteLine("Evil Verity is coming for you");
+    };
+}
+catch
+{
+    Console.WriteLine("How did we get here? (Error)");
+};
