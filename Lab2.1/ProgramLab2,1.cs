@@ -1,4 +1,5 @@
-﻿try
+﻿//вариант 5 Высокий уровень
+try
 {
     Console.Write("Enter a numba (4 digits): ");
     int num = int.Parse(Console.ReadLine());
