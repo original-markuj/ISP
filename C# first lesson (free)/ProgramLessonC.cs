@@ -46,30 +46,57 @@
 
 //Console.WriteLine($"Do not go home until you finish reading the value of e. {Math.E:f50}");
 
+//try
+//{
+//    Console.Write("Hey, it's me, it's Verity! ");
+//    string x = Console.ReadLine();
+//    if (x == "Ask me anything")
+//    {
+//        Console.WriteLine("I have a question.");
+//        Console.Write("I know about a million things! ");
+//        string y = Console.ReadLine();
+//        if (y == "I'll do everything")
+//        {       
+//            Console.WriteLine("Alright!");
+//        }
+//        else
+//        {
+//            Console.WriteLine("Evil Verity is coming for you");
+//        };
+//    }
+//    else
+//    { 
+//        Console.WriteLine("Evil Verity is coming for you");
+//    };
+//}
+//catch
+//{
+//    Console.WriteLine("How did we get here? (Error)");
+//};
 try
 {
-    Console.Write("Hey, it's me, it's Verity! ");
-    string x = Console.ReadLine();
-    if (x == "Ask me anything")
+    Console.Write("Enter numba (up to 3 digits): ");
+    int num = int.Parse(Console.ReadLine());
+
+    int a = num % 10;
+    int b = num / 10 % 10;
+    int c = num / 100 % 10;
+
+    int num1 = 3;
+    int num2 = 6;
+
+    if ((a == num1 || b == num1 || c == num1) || (a == num2 || b ==num2 || c ==num2))
     {
-        Console.WriteLine("I have a question.");
-        Console.Write("I know about a million things! ");
-        string y = Console.ReadLine();
-        if (y == "I'll do everything")
-        {       
-            Console.WriteLine("Alright!");
-        }
-        else
-        {
-            Console.WriteLine("Evil Verity is coming for you");
-        };
+        Console.WriteLine("Yay :)");
     }
     else
-    { 
-        Console.WriteLine("Evil Verity is coming for you");
-    };
+    {
+        Console.WriteLine("Not yay >:(");
+    }
 }
 catch
 {
-    Console.WriteLine("How did we get here? (Error)");
+
+    Console.WriteLine("Minor spelling mistake");
+
 };
