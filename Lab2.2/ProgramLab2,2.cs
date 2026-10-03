@@ -1,4 +1,6 @@
-﻿try
+﻿//Вариант 5 Высокий уровень
+
+try
 {
     Console.Write("Enter postcard's theme (1-3): ");
     int theme = int.Parse(Console.ReadLine());
