@@ -1,76 +1,67 @@
-﻿//Вариант 5 Высокий уровень
+﻿//Вариант 5 Средний уровень
 
 try
 {
-    Console.Write("Enter postcard's theme (1-3): ");
-    int theme = int.Parse(Console.ReadLine());
-
-    if (theme < 1 || theme > 3)
-    {
-        Console.WriteLine("Nopers");
-        Environment.Exit(0);
-    }
-
-    Console.Write("Enter postcard's variation (1-3): ");
+    Console.Write("Enter variant of parameters (1-3): ");
     int var = int.Parse(Console.ReadLine());
 
-    if (var < 1 || var > 3)
-    {
-        Console.WriteLine("Nopers");
-        Environment.Exit(0);
-    }
+    Console.Write("Enter x: ");
+    double x = double.Parse(Console.ReadLine());
 
-    Console.Write("Enter amount of money (1 - 5gr, 2 - 10gr, 3 - 20gr): ");
-    int money = int.Parse(Console.ReadLine());
+    double y = 0;
 
-    if (money < 1 || money > 3)
-    {
-        Console.WriteLine("Nopers");
-        Environment.Exit(0);
-    }
+    double a = 0;
+    double b = 0;
+    double c = 0;
 
-
-    string kup1 = "1gr";
-    string kup2 = "2gr";
-    string kup3 = "5gr";
-    string kup4 = "10gr";
-
-    switch (theme)
-    {
-        case 1: Console.Write("Merry Chirstmas theme, ");
-            break;
-        case 2: Console.Write("Happy Birthday theme, ");
-            break;
-        case 3: Console.Write("Day of Nation Defenders theme, ");
-            break;
-    }
     switch (var)
     {
         case 1:
-            Console.Write("Variation A, ");
+            a = 4.2; b = 5.3; c = 1.5;
             break;
-        case 2:
-            Console.Write("Variation B, ");
+        case 2: 
+            a = -0.35; b = 1.8; c = -1.8; 
             break;
-        case 3:
-            Console.Write("Variation C, ");
+        case 3: 
+            a = 2.8; b = -0.6; c = 2; 
             break;
+        default: Console.WriteLine("Nopers"); break;
     }
-    switch (money)
+
+    double e1 = Math.Exp(a + b);
+    double e2 = Math.Exp(x);
+
+    if (e1 > e2)
+    {
+        var = 1;
+    }
+    else if (e1 == e2)
+    {
+        var = 2;
+    }
+    else if (e1 < e2)
+    {
+        var = 3;
+    }
+
+    switch (var)
     {
         case 1:
-            Console.Write($"Your change is: {kup2} + {kup1}");
+            y = Math.Sin(e1) + x * x;
             break;
         case 2:
-            Console.Write($"Your change is: {kup4}");
+            y = Math.Atan(a * b * c) + Math.Cbrt(x);
             break;
         case 3:
-            Console.Write($"Your change is: {kup4} + {kup3} + {kup2} + {kup1}");
+            y = Math.Cos(Math.Sqrt(Math.Abs(x + a * b * c)));
             break;
     }
 
+    Console.WriteLine($"Your answer is: {y}");
+
 }
-catch
+catch (Exception e)
 {
-    Console.WriteLine("Nopers");
+    Console.WriteLine("Nopers (error)");
+    Console.WriteLine(e.Message);
 }
