@@ -73,30 +73,54 @@
 //{
 //    Console.WriteLine("How did we get here? (Error)");
 //};
+//try
+//{
+//    Console.Write("Enter numba (up to 3 digits): ");
+//    int num = int.Parse(Console.ReadLine());
+
+//    int a = num % 10;
+//    int b = num / 10 % 10;
+//    int c = num / 100 % 10;
+
+//    int num1 = 3;
+//    int num2 = 6;
+
+//    if ((a == num1 || b == num1 || c == num1) || (a == num2 || b ==num2 || c ==num2))
+//    {
+//        Console.WriteLine("Yay :)");
+//    }
+//    else
+//    {
+//        Console.WriteLine("Not yay >:(");
+//    }
+//}
+//catch
+//{
+
+//    Console.WriteLine("Minor spelling mistake");
+
+//};
 try
 {
-    Console.Write("Enter numba (up to 3 digits): ");
-    int num = int.Parse(Console.ReadLine());
+    Console.Write("Enter amount of rubles: ");
+    decimal num = decimal.Parse(Console.ReadLine());
 
-    int a = num % 10;
-    int b = num / 10 % 10;
-    int c = num / 100 % 10;
+    decimal x = num;
 
-    int num1 = 3;
-    int num2 = 6;
+    if (x > 5 && x < 21) x = 5;
+    else if (x >= 21) x = x % 10;
+    if (x > 5) x = 5;
 
-    if ((a == num1 || b == num1 || c == num1) || (a == num2 || b ==num2 || c ==num2))
+    switch (x)
     {
-        Console.WriteLine("Yay :)");
-    }
-    else
-    {
-        Console.WriteLine("Not yay >:(");
+        case 0: Console.WriteLine($"{num} рублей"); break;
+        case 1: Console.WriteLine($"{num} рубль"); break;
+        case 2: case 3: case 4: Console.WriteLine($"{num} рубля"); break;
+        case 5: Console.WriteLine($"{num} рублей"); break;
+        default: Console.WriteLine("Nopers"); break;
     }
 }
-catch
+catch 
 {
-
-    Console.WriteLine("Minor spelling mistake");
-
+    Console.WriteLine("Nopers");
 };
