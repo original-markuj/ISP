@@ -293,7 +293,7 @@
 
 //try
 //{
-    
+
 //    long k = 0;
 //    long k3 = 0;
 //    long kLast = 0;
@@ -336,11 +336,180 @@
 //}
 
 
-for (int i = 5; i <= 25; i += 5)
+//for (int i = 5; i <= 25; i += 5)
+//{
+//    for (int j = 6; j - i / 5 > 0; j--)
+//    {
+//        Console.Write($"{i} ");
+//    }
+//    Console.WriteLine();
+//}
+
+
+//try
+//{
+
+//    Console.Write("Enter k: ");
+//    int k = int.Parse(Console.ReadLine());
+//    double A = 1;
+
+//    for (int j = 1; j <= k; j ++)
+//    {
+//        if (j == 3) continue;
+//        double s = 0;
+//        for (int i = j; i <= k + 1; i++)
+//        {
+//            if (i == 1) continue;
+//            s += Math.Pow(i - 5, 1 / 3.0);
+//        }
+//    }
+//}
+
+//catch(Exception e)
+//{
+//    Console.WriteLine(e.Message);
+//}
+
+//int i = 4;
+
+//for (int c = i; c > 1; c--)
+//{
+//    i *= c - 1;
+//}
+
+//Console.WriteLine(i);
+
+bool end = false;
+
+try
 {
-    for (int j = 6; j - i / 5 > 0; j--)
+    while (true)
     {
-        Console.Write($"{i} ");
+        Console.Write("Enter game's name (slots, roulette; break for program end):");
+        string game = Console.ReadLine();
+
+        decimal moneyAmt = 100;
+
+        switch (game)
+        {
+            case "slots":
+                while (true)
+                {
+                    try
+                    {
+
+                        Console.WriteLine($"Money amount: {moneyAmt}");
+
+                        Console.Write("Enter sum of bet: ");
+                        decimal bet = decimal.Parse(Console.ReadLine());
+
+                        if (bet < 0) bet = 0;
+                        if (bet > moneyAmt) bet = moneyAmt;
+
+                        moneyAmt -= bet;
+
+                        Random rng = new Random();
+                        int one = rng.Next(1, 10);
+                        int two = rng.Next(1, 10);
+                        int three = rng.Next(1, 10);
+
+                        int randomInt = rng.Next(1, 7 + 1);
+
+                        for (int i = 0; i < randomInt; i++)
+                        {
+                            int oneR = rng.Next(1, 10);
+                            int twoR = rng.Next(1, 10);
+                            int threeR = rng.Next(1, 10);
+                            Console.WriteLine($"{oneR} {twoR} {threeR}");
+                            await Task.Delay(rng.Next(250, 500));
+                        }
+
+                        Console.WriteLine();
+
+                        Console.WriteLine($"{one} {two} {three}");
+
+
+                        if (one == three && one == two && one == 7)
+                        {
+                            Console.WriteLine("JACKPOOOOOOT!!!!!");
+                            moneyAmt += bet * 99;
+                        }
+                        else if (one == three && one == two)
+                        {
+                            Console.WriteLine("Win!!!");
+                            moneyAmt += bet * 7;
+                        }
+                        else if (one == two || one == three || two == three)
+                        {
+                            Console.WriteLine("Mini win!");
+                            moneyAmt += bet * 3;
+                        }
+                        else
+                        {
+                            Console.WriteLine($"You lost {bet}");
+                        }
+
+                        if (moneyAmt <= 0)
+                        {
+                            Console.WriteLine("You lost!");
+                            break;
+                        }
+                        else if (moneyAmt >= 1000000)
+                        {
+                            Console.WriteLine("You win!");
+                            break;
+                        }
+                    }
+
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e.Message);
+                    }
+                }
+                break;
+
+            case "roulette":
+                while (true)
+                {
+                    try
+                    {
+                        Console.WriteLine($"Money amount: {moneyAmt}");
+
+                        Console.Write("Enter sum of bet: ");
+                        decimal bet = decimal.Parse(Console.ReadLine());
+
+                        if (bet < 0) bet = 0;
+                        if (bet > moneyAmt) bet = moneyAmt;
+
+                        Console.Write("Bet color(red, black, green):");
+                        string clr = Console.ReadLine();
+
+                        moneyAmt -= bet;
+
+                        Random rng = new Random();
+
+                        int nColor = rng.Next(1, 38);
+                        
+                    }
+                    catch(Exception e)
+                    {
+                        Console.WriteLine(e.Message);
+                    }
+                }
+                break;
+
+            case "break":
+                end = true;
+                break;
+
+            default: Console.WriteLine("Enter proper name"); break;
+        }
+
+        if (end) break;
     }
-    Console.WriteLine();
 }
+catch(Exception e)
+{
+    Console.WriteLine(e.Message);
+}
+
