@@ -18,7 +18,15 @@ try
         switch (path)
         {
             case "top":
-                
+                if (path == "top") switch (path)
+                    {
+                        case "top":
+                            path = "top"; if (path != "top") path = "opa";
+                            break;
+                        case "bottom":
+                            Console.WriteLine("Hatish");
+                            break; //не убивайте меня за этот кусок кода😭
+                    }
                 if (step != 1) step++;
                 if (step > 2 * n) step--;
                 for (int c = step; c > 0; c--)
