@@ -8,7 +8,9 @@
   <Project Path="Lab2/Lab2.csproj" Id="905cfbb0-3537-4e67-8a76-68cf9f14b19f" />
   <Project Path="Lab3.1/Lab3.1.csproj" Id="7c42c2cd-cb78-4055-8c39-46792b8929c2" />
   <Project Path="Lab3.2/Lab3.2.csproj" Id="6b7bc30c-fdf0-4fc0-88bb-85165fc15d31" />
+  <Project Path="Lab3.3/Lab3.3.csproj" Id="d3d05114-459e-4b4b-8c4a-1599b94fbec8" />
   <Project Path="Lab3/Lab3.csproj" Id="63187938-ab88-4cd0-b3be-1f2688e6ce3c" />
+  <Project Path="Lab4.1/Lab4.1.csproj" Id="9937a1ad-be29-4c19-99b8-127a2f5db74e" />
   <Project Path="Lab4/Lab4.csproj" Id="441b880a-c15b-42d8-b5f8-b3a557b031b8" />
   <Project Path="MARKUJ CASBET/MARKUJ CASBET.csproj" Id="210e985d-fddc-44eb-907c-aa9d04c602e0" />
 </Solution>

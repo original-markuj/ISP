@@ -379,5 +379,29 @@
 
 //Console.WriteLine(i);
 
+//Random rng = new Random();
+//int n = rng.Next(2,10);
 
+//int[,] mass = new int[n,n];
 
+//for (int i = 0; i < mass.GetLength(0); i++)
+//{
+//    for (int j = 0; j < mass.GetLength(1); j++)
+//    {
+//        mass[i, j] = rng.Next(-3, 3);
+//        Console.Write($" {mass[i, j]} ");
+//    }
+//    Console.WriteLine();
+//}
+
+//double aa = 0;
+
+//for (int i = 0;i < mass.GetLength(0); i++)
+//{
+//    if (mass[i,i] < 0) mass[i,i] = Math.Abs(mass[i,i]);
+//    aa += mass[i,i];;
+//}
+
+//aa /= mass.GetLength(0);
+
+//Console.WriteLine($"{aa:f2}");
