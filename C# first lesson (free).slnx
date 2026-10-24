@@ -12,5 +12,6 @@
   <Project Path="Lab3/Lab3.csproj" Id="63187938-ab88-4cd0-b3be-1f2688e6ce3c" />
   <Project Path="Lab4.1/Lab4.1.csproj" Id="9937a1ad-be29-4c19-99b8-127a2f5db74e" />
   <Project Path="Lab4/Lab4.csproj" Id="441b880a-c15b-42d8-b5f8-b3a557b031b8" />
+  <Project Path="Lab5/Lab5.csproj" Id="18259678-e64e-4eaa-b006-462fec747d99" />
   <Project Path="MARKUJ CASBET/MARKUJ CASBET.csproj" Id="210e985d-fddc-44eb-907c-aa9d04c602e0" />
 </Solution>
