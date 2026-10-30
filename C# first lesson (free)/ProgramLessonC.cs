@@ -405,3 +405,39 @@
 //aa /= mass.GetLength(0);
 
 //Console.WriteLine($"{aa:f2}");
+
+//for (int i = 25; i < 128; i++)
+//{
+//    Console.Write((char)i + " ");
+//}
+
+//char[,] matrix = new char[5, 7];
+
+//Random rng = new Random();
+
+//for (int i = 0; i < matrix.GetLength(0); i++)
+//{
+//    for (int j = 0; j < matrix.GetLength(0); j++)
+//    {
+//        matrix[i, j] = (char)rng.Next(26, 128);
+//        Console.Write($"{matrix[i,j]} ");
+//    }
+//    Console.WriteLine();
+//}
+
+//int sum = 0;
+
+//for (int i = 0; i < matrix.GetLength(0); i++)
+//{
+//    for (int j = 0; j < matrix.GetLength(0); j++)
+//    {
+//        if (char.IsDigit(matrix[i,j]))
+//        {
+//            sum += int.Parse(matrix[i, j].ToString());
+//        }
+//        Console.Write($"{matrix[i, j]} ");
+//    }
+//    Console.WriteLine();
+//}
+
+//Console.WriteLine($"\n {sum}");
