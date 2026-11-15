@@ -441,3 +441,177 @@
 //}
 
 //Console.WriteLine($"\n {sum}");
+
+int x = 24;
+int y = 16;
+
+string[,] space = new string [y, x];
+
+int locationX = x / 2;
+int locationY = y / 2;
+
+int eLocationX = locationX / 2;
+int eLocationY = locationY / 2;
+
+bool canMove = true;
+bool gameOver = false;
+
+string up = "u";
+string down = "d";
+string left = "l";
+string right = "r";
+
+Random rng = new Random();
+
+
+void aiWork()
+{
+    bool XY = rng.Next(0, 2) == 1;
+    if (eLocationX == locationX) XY = true;
+    else if (eLocationY == locationY) XY = false;
+    switch (XY)
+    {
+        case bool a when (!XY && eLocationX < locationX) == true:
+            eLocationX++;
+            break;
+        case bool a when (!XY && eLocationX > locationX) == true:
+            eLocationX--;
+            break;
+        case bool a when (XY && eLocationY < locationY) == true:
+            eLocationY++;
+            break;
+        case bool a when (XY && eLocationY > locationY) == true:
+            eLocationY--;
+            break;
+    }
+}
+void FieldSetUp()
+{
+    if (gameOver)
+    {
+        Console.WriteLine("Game Over!");
+        return;
+    }
+    Console.Clear();
+    if (canMove) aiWork();
+    for (int i = 0; i < space.GetLength(0); i++)
+    {
+        for (int j = 0; j < space.GetLength(1); j++)
+        {
+            switch (canMove)
+            {
+                case bool a when ((j == 0 || j == space.GetLength(1) - 1) || (i == 0 || i == space.GetLength(0) - 1)):
+                    space[i, j] = "o ";
+                    break;
+                case bool a when (locationX == j && locationY == i):
+                    space[i, j] = "I ";
+                    break;
+                case bool a when (eLocationX == j && eLocationY == i):
+                    space[i, j] = "X ";
+                    break;
+                case bool a when (eLocationX == locationX && eLocationY == locationY):
+                    gameOver = true;
+                    break;
+                default:
+                    space[i, j] = "  ";
+                    break;
+            }
+           
+        }
+    }
+
+    for (int i = 0; i < space.GetLength(0); i++)
+    {
+        for (int j = 0; j < space.GetLength(1); j++)
+        {
+            Console.Write(space[i,j]);
+        }
+        Console.WriteLine();
+    }
+    canMove = true;
+}
+void check(string dir,int numDir)
+{
+    switch (dir)
+    {
+        case string d when dir == up:
+            if (locationY - 1 <= 0) canMove = false;
+            break;
+        case string d when dir == left:
+            if (locationX - 1 <= 0) canMove = false;
+            break;
+        case string d when dir == down:
+            if (locationY + 1 >= space.GetLength(0) - 1) canMove = false;
+            break;
+        case string d when dir == right:
+            if (locationX + 1 >= space.GetLength(1) - 1) canMove = false;
+            break;
+    }
+    move(dir,numDir);
+}
+
+void move(string dir, int numDir)
+{
+    if (numDir == null) numDir = 1;
+    for (int i = 0; i < numDir; i++)
+    {
+        if (!canMove) dir = "";
+        switch (dir)
+        {
+            case string d when dir == up:
+                locationY--;
+                break;
+            case string d when dir == left:
+                locationX--;
+                break;
+            case string d when dir == down:
+                locationY++;
+                break;
+            case string d when dir == right:
+                locationX++;
+                break;
+            case string d when dir == "boom":
+                if (eLocationX - 1 == locationX || eLocationX + 1 == locationX || eLocationY - 1 == eLocationY || eLocationY + 1 == eLocationY)
+                {
+                    boom();
+                }
+                break;
+            default:
+                break;
+        }
+        FieldSetUp();
+    }    
+}
+
+void boom()
+{
+
+}
+
+FieldSetUp();
+
+while (true)
+{
+    try
+    {
+        Console.Write("Move: ");
+        string moveDir = Console.ReadLine();
+        string dir = moveDir[0].ToString();
+
+        int numDir = int.Parse(moveDir.Substring(1));
+
+        if (gameOver)
+        {
+            Console.WriteLine("Game Over!");
+            break;
+        }
+
+        check(dir, numDir);
+    }
+
+    catch(Exception e)
+    {
+        Console.WriteLine(e.Message);
+        await Task.Delay(500);
+    }
+}
