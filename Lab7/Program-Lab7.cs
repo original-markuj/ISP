@@ -1,4 +1,5 @@
-﻿Car[] cars = new Car[5];
+﻿//Вариант 13 Средний Уровень
+Car[] cars = new Car[5];
 
 Random rng = new Random();
 
