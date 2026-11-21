@@ -16,7 +16,7 @@ for (int i = 0; i < cars.Length; i++)
 {
     int rngName = rng.Next(names.Length);
     int rngYear = rng.Next(2000, 2027);
-    rngYearDate = rngYear - rng.Next(1, 5);
+    rngYearDate = rngYear - rng.Next(0, 5);
     rngMonthDate = rng.Next(1, 13);
     if (rngMonthDate == 2) rngDayDate = rng.Next(1, 29);
     else if ((rngMonthDate % 2 == 1 && rngMonthDate <= 7) || (rngMonthDate % 2 == 0 && rngMonthDate > 7)) rngDayDate = rng.Next(1, 32);
